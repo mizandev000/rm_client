@@ -1,0 +1,141 @@
+@import "../abstracts/variable";
+@import "../abstracts/mixin";
+
+.testimonial {
+  margin-bottom: 100px;
+}
+.testimonialWrap {
+  background-color: #f6f7fa;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-top: 100px;
+}
+.testimonialMap {
+  width: 1180px;
+  height: 770px;
+  display: inline-block;
+  background-image: url("/map.png");
+  background-repeat: no-repeat;
+
+  @include size("xl") {
+    width: 100%;
+    height: 100%;
+  }
+}
+.testimonialSliderWrap {
+  background-color: white;
+  padding: 64px 30px 30px 64px;
+  position: relative;
+  text-align: center;
+  margin-top: 64px;
+  margin-bottom: 24px;
+
+  h5 {
+    color: $tx-color-content;
+    width: 60%;
+    margin: auto;
+    margin-top: 18px;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  h4 {
+    font-size: $font-size-h5;
+    color: $tx-color-content;
+    margin-top: 20px;
+  }
+  h3 {
+    color: $primary;
+    font-size: $font-size-h4;
+    margin-top: 16px;
+  }
+  .testimonialImg {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0px 10px 15px rgb(9 2 111 / 30%);
+
+    img {
+      overflow: hidden;
+      border-radius: 50%;
+    }
+  }
+}
+.testimonialDotList {
+  li {
+    button {
+      border-color: $primary;
+      background-color: $primary;
+    }
+  }
+}
+.testimonialSliderContent {
+  position: relative;
+}
+.testimonialProfile {
+  width: 100%;
+  background-color: green;
+  .testimonialProfileItem {
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    background: gray;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0px 10px 15px rgba(9, 2, 111, 0.3);
+
+    @include size("xl") {
+      display: none;
+    }
+
+    &:nth-child(1) {
+      left: -100px;
+      width: 80px;
+      height: 80px;
+    }
+    &:nth-child(2n) {
+      right: -200px;
+      width: 74px;
+      height: 74px;
+    }
+    &:nth-child(3n) {
+      left: -200px;
+      width: 74px;
+      height: 74px;
+      top: 150px;
+    }
+    &:nth-child(4n) {
+      right: -120px;
+      width: 50px;
+      height: 50px;
+      top: 150px;
+    }
+    &:nth-child(5n) {
+      left: -150px;
+      width: 74px;
+      height: 74px;
+      bottom: -40px;
+    }
+    &:nth-child(6n) {
+      right: -244px;
+      width: 80px;
+      height: 80px;
+      top: unset;
+      left: unset;
+      bottom: 58px;
+    }
+    &:nth-child(7n) {
+      right: -144px;
+      width: 50px;
+      height: 50px;
+      top: unset;
+      left: unset;
+      bottom: 0px;
+    }
+  }
+}

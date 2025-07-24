@@ -1,0 +1,21 @@
+@import "../../abstracts/variable";
+@import "../../abstracts/mixin";
+
+.whyChoose {
+  .whyChooseList {
+    margin-top: 44px;
+    ul {
+      li {
+        font-size: $font-size-h5;
+        color: $tx-color;
+        margin-top: 16px;
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+.whatYouGet {
+  margin-bottom: 84px;
+}

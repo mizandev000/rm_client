@@ -1,0 +1,18 @@
+@import "../abstracts/variable";
+@import "../abstracts/mixin";
+.title {
+  text-align: center;
+  color: $tx-color;
+  margin-bottom: 24px;
+  margin-top: 80px;
+  h2 {
+    font-size: $font-size-h1;
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  p {
+    font-size: 18px;
+    width: 60%;
+    margin: auto;
+  }
+}

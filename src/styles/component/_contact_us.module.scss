@@ -1,0 +1,71 @@
+@import "../abstracts/_variable.scss";
+@import "../abstracts/_mixin.scss";
+
+.contactWrap {
+  margin-bottom: 80px;
+}
+.contact {
+  margin-top: 80px;
+
+  .inputItem {
+    margin-bottom: 24px;
+    label {
+      width: 100%;
+      margin-bottom: 16px;
+      display: inline-block;
+      font-size: $font-size-h5;
+      p {
+        font-size: $font-size-p;
+        color: $tx-color-content;
+        span {
+          color: $error;
+        }
+      }
+    }
+    input,
+    textarea {
+      border: 1px solid hsl(0, 0%, 80%);
+      padding: 14px;
+      width: 100%;
+      @extend .transitionAll;
+      &::placeholder {
+        color: hsl(0, 0%, 50%);
+      }
+      &:focus {
+        // border-color: red;
+        outline: 0;
+        box-shadow: 0px 0px 3px 3px rgba(249, 183, 41, 0.3);
+        @extend .transitionAll;
+      }
+    }
+    textarea {
+      width: 100%;
+      min-height: 200px;
+      resize: vertical;
+    }
+  }
+  .submitBtn {
+    padding: 16px;
+    background-color: $primary;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+  }
+}
+.address {
+  box-shadow: 0px 0px 30px 0px rgba(78, 78, 78, 0.1);
+  padding: 2em;
+  margin-bottom: 24px;
+  margin-left: 44px;
+  h3 {
+    font-size: $font-size-h3;
+    color: $primary;
+    margin-bottom: 16px;
+  }
+  p {
+    font-size: $font-size-p;
+    color: $tx-color;
+    margin-top: 6px;
+  }
+}
