@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import styles from "../../styles/component/_header.module.scss";
+import PhoneIcon from "../Icon/PhoneIcon";
 
 export default function Nav() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -172,9 +173,10 @@ export default function Nav() {
             Get A Quote
           </Link>
         </li>
-        <li className={`${styles.navItem}`}>
+        <li className={`${styles.navItem} ${styles.callUs}`}>
           <a href="tel:+64284215199" className="text-blue-600 underline">
-            📞 Call Us: +64284215199
+            <PhoneIcon Color="white" />
+            Call Us: +64284215199
           </a>
         </li>
       </ul>

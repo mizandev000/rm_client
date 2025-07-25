@@ -13,7 +13,7 @@
     fill: #148e8b;
   }
 
-  @include size("xl") {
+  @include size("lg") {
     display: block;
   }
 }
@@ -76,6 +76,7 @@
         width: 100%;
         padding: 10px 15px;
         display: inline-block;
+        color: white;
       }
       &:hover {
         background-color: $primary;
@@ -122,6 +123,7 @@
   padding: 10px 15px;
   display: flex;
   justify-content: space-between;
+  color: white;
 
   &:hover {
     background-color: $primary;
@@ -181,11 +183,43 @@
 .dropdown ul li a {
   display: block;
   padding: 10px 15px;
-  color: #333 !important;
+  color: #fff !important;
   text-decoration: none;
 
   &:hover {
     background-color: $primary;
     color: white !important;
   }
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100vh;
+  background: #111;
+  transition: right 0.3s ease;
+  z-index: 999999;
+}
+
+.showSidebar {
+  right: 0;
+}
+
+.mobMenuIcon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+}
+
+.mobCloseIcon {
+  background: none;
+  border: none;
+}
+
+.subMenuWrap {
+  padding-left: 1rem;
+  background-color: #222;
 }

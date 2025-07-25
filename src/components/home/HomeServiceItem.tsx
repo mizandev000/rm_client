@@ -1,4 +1,5 @@
 import { HomeServiceProps } from "@/@types/home";
+import Link from "next/link";
 import styles from "../../styles/component/_homeService.module.scss";
 
 export default function HomeServiceItem(props: HomeServiceProps) {
@@ -10,9 +11,9 @@ export default function HomeServiceItem(props: HomeServiceProps) {
         <p>{props.details}</p>
       </div>
       <div className={styles.readMore}>
-        <a href="#" className="fadeup-sm">
+        <Link href={`/service/${props.url}`} className="fadeup-sm">
           Read More
-        </a>
+        </Link>
       </div>
     </div>
   );

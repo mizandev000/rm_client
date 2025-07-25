@@ -1,6 +1,11 @@
+@import "../abstracts/mixin";
 .expansionWrap {
   margin-top: 80px;
   margin-bottom: 80px;
+  @include size("md") {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
 }
 .expansionPanner {
   display: block;

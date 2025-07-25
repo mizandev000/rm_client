@@ -184,6 +184,7 @@ export default function Quote() {
                     flexDirection: "column",
                     gap: "0.5rem",
                   }}
+                  className={styles.checkboxItem}
                 >
                   {interests.map((item) => (
                     <CustomCheckbox

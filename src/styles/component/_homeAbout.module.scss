@@ -6,16 +6,26 @@
   h4 {
     font-size: $font-size-h3;
     font-weight: 400;
+    @include size("md") {
+      font-size: $font-size-h4;
+    }
   }
   h1 {
     font-size: $font-size-h1;
     margin: 16px 0;
     font-weight: 400;
+
+    @include size("md") {
+      font-size: $font-size-h3;
+    }
   }
   p {
     font-size: $font-size-h5;
     line-height: 1.6;
     padding-left: 4%;
+    @include size("md") {
+      padding-left: 0;
+    }
   }
 }
 .homeAboutImgWrap {

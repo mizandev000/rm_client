@@ -1,244 +1,197 @@
 "use client";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import styles from "../../styles/component/_mobile_menu.module.scss";
 import CloseIcon from "../Icon/CloseIcon";
 import MenuIcon from "../Icon/MenuIcon";
-gsap.registerPlugin(ScrollTrigger);
 
 const MobileMenu = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [activeMobileSidebar, setActiveMobileSidebar] =
-    useState<boolean>(false);
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
-  const mobileMenuRef = useRef<HTMLButtonElement | null>(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const sidebarRef = useRef<HTMLDivElement | null>(null);
 
-  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
-
-  const toggleDropdown = (menuName: string) => {
-    setActiveDropdown((prevMenu) => (prevMenu === menuName ? null : menuName));
+  const toggleDropdown = (menu: string) => {
+    setActiveDropdown((prev) => (prev === menu ? null : menu));
   };
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        activeDropdown &&
-        dropdownRefs.current[activeDropdown] &&
-        !dropdownRefs.current[activeDropdown]?.contains(event.target as Node)
-      ) {
-        setActiveDropdown(null);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [activeDropdown]);
-
-  // Close dropdown when clicking a link
   const handleLinkClick = () => {
     setActiveDropdown(null);
-    setActiveMobileSidebar(false);
+    setIsSidebarOpen(false);
+  };
+
+  const handleOutsideClick = (event: MouseEvent) => {
+    if (
+      sidebarRef.current &&
+      !sidebarRef.current.contains(event.target as Node)
+    ) {
+      setIsSidebarOpen(false);
+      setActiveDropdown(null);
+    }
   };
 
   useEffect(() => {
-    if (activeMobileSidebar) {
-      mobileMenuRef.current?.classList.add(styles.showSidebar);
+    if (isSidebarOpen) {
+      document.addEventListener("mousedown", handleOutsideClick);
     } else {
-      mobileMenuRef.current?.classList.remove(styles.showSidebar);
+      document.removeEventListener("mousedown", handleOutsideClick);
     }
-  }, [activeMobileSidebar]);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, [isSidebarOpen]);
 
   return (
     <>
+      {/* Open Menu Icon */}
       <button
-        ref={mobileMenuRef}
-        onClick={() => setActiveMobileSidebar(!activeMobileSidebar)}
+        onClick={() => setIsSidebarOpen(true)}
         className={styles.mobMenuIcon}
       >
-        <MenuIcon Color="##148e8b" />
+        <MenuIcon Color="#148e8b" />
       </button>
+
+      {/* Sidebar */}
       <div
-        className={`${styles.mobileMenu}  ${
-          activeMobileSidebar ? `${styles.showSidebar}` : ""
+        ref={sidebarRef}
+        className={`${styles.mobileMenu} ${
+          isSidebarOpen ? styles.showSidebar : ""
         }`}
       >
         <div className={styles.mobileHeader}>
           <div className={styles.logo}>
-            <Image
-              className="logo"
-              src="/logo.png"
-              alt="Logo"
-              width={40}
-              height={38}
-            />
+            <Image src="/logo.png" alt="Logo" width={40} height={38} />
           </div>
           <button
-            ref={mobileMenuRef}
-            onClick={() => setActiveMobileSidebar(!activeMobileSidebar)}
+            onClick={() => setIsSidebarOpen(false)}
             className={styles.mobCloseIcon}
           >
             <CloseIcon Color="#fff" />
           </button>
         </div>
-        <nav className={styles.navbarMobile} id="nav">
+
+        <nav className={styles.navbarMobile}>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <Link href={"/"} onClick={handleLinkClick}>
+              <Link href="/" onClick={handleLinkClick}>
                 Home
               </Link>
             </li>
+
+            {/* Services Dropdown */}
             <li className={styles.navItem}>
-              <button onMouseOver={() => toggleDropdown("about")}>
-                About Us
+              <button onClick={() => toggleDropdown("services")}>
+                Services
               </button>
-              <div
-                ref={(el) => {
-                  dropdownRefs.current["about"] = el;
-                }}
-                className={`${styles.dropdown} ${
-                  activeDropdown === "about" ? `${styles.open}` : ""
-                }`}
-              >
+              {activeDropdown === "services" && (
                 <ul className={styles.subMenuWrap}>
                   <li>
                     <Link
-                      href={"/about-us/message-from-chairman"}
+                      href={`/service/local-moving`}
                       onClick={handleLinkClick}
                     >
-                      Message from Chairman
+                      Local Moving
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href={"/about-us/company-information"}
+                      href={`/service/cleaning-decluttering`}
                       onClick={handleLinkClick}
                     >
-                      Company Information
+                      Cleaning and Decluttering Services
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href={"/about-us/team-members"}
+                      href={`/service/single-item-movers`}
                       onClick={handleLinkClick}
                     >
-                      Team Members
+                      Single Item Movers
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href={"/about-us/official-documents"}
+                      href={`/service/office-furniture-moving`}
                       onClick={handleLinkClick}
                     >
-                      Official documents
+                      Office Furniture Moving Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`/service/long-distance-moving`}
+                      onClick={handleLinkClick}
+                    >
+                      Long Distance Moving Services
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      href={`/service/house-relocation`}
+                      onClick={handleLinkClick}
+                    >
+                      House Relocation Services
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      href={`/service/piano-shifting`}
+                      onClick={handleLinkClick}
+                    >
+                      Piano Shifting Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`/service/nort-south-island-moving`}
+                      onClick={handleLinkClick}
+                    >
+                      North & South Island Moving
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`/service/bike-car-boat-transport`}
+                      onClick={handleLinkClick}
+                    >
+                      Bike, Car & Boat Transport
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`/service/kitchen-cabinet-delivery`}
+                      onClick={handleLinkClick}
+                    >
+                      Kitchen Cabinet Delivery
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`/service/senior-movers`}
+                      onClick={handleLinkClick}
+                    >
+                      Senior Movers
                     </Link>
                   </li>
                 </ul>
-              </div>
+              )}
             </li>
+
             <li className={styles.navItem}>
-              <button onMouseOver={() => toggleDropdown("menu2")}>
-                Services
-              </button>
-              <div
-                ref={(el) => {
-                  dropdownRefs.current["menu2"] = el;
-                }}
-                className={`${styles.dropdown} ${
-                  activeDropdown === "menu2" ? `${styles.open}` : ""
-                }`}
-              >
-                <ul>
-                  <li>
-                    <Link
-                      href={
-                        "/services/comprehensive-domestic-cleaning-services"
-                      }
-                      onClick={handleLinkClick}
-                    >
-                      Domestic Cleaning Services
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href={"/services/commercial-cleaning-services"}
-                      onClick={handleLinkClick}
-                    >
-                      Commercial Cleaning Services
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href={"/services/light-rail-cleaning-services"}
-                      onClick={handleLinkClick}
-                    >
-                      Transit & Facility Cleaning
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href={"/services/real-estate-development-services"}
-                      onClick={handleLinkClick}
-                    >
-                      Real Estate Development Services
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href={"/services/mep-services"}
-                      onClick={handleLinkClick}
-                    >
-                      MEP Services
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href={"/services/hvac-services"}
-                      onClick={handleLinkClick}
-                    >
-                      HVAC Services
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li className={styles.navItem}>
-              <Link
-                href={"/projects"}
-                onMouseOver={() => toggleDropdown("projects")}
-              >
-                Projects
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link
-                href={"/resources"}
-                onMouseOver={() => toggleDropdown("resources")}
-              >
-                Resources
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link
-                href={"/contact-us"}
-                onMouseOver={() => toggleDropdown("contact")}
-              >
+              <Link href="/contact-us" onClick={handleLinkClick}>
                 Contact Us
               </Link>
             </li>
-            <li className={`${styles.navItem}`}>
-              <Link
-                href={"/appointment"}
-                onMouseOver={() => toggleDropdown("appointment")}
-                className={styles.appointmentBtn}
-              >
-                Appointment
+            <li className={styles.navItem}>
+              <Link href="/moving-quote" onClick={handleLinkClick}>
+                Get A Quote
               </Link>
+            </li>
+            <li className={`${styles.navItem} ${styles.callUs}`}>
+              <a href="tel:+64284215199" className="text-blue-600 underline">
+                Call Us: +64284215199
+              </a>
             </li>
           </ul>
         </nav>

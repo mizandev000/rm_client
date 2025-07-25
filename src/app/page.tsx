@@ -9,15 +9,15 @@ import styles from "../styles/page/_home.module.scss";
 // gsap.registerPlugin(ScrollTrigger);
 
 export const metadata = {
-  title: "Contact Us | Pie Solutions",
+  title: "Home | Rm Moving Express",
   description:
-    "Get in touch with Pie Solutions' team for business modernization services, inquiries, and partnership opportunities.",
+    "Planning a move across islands? Our North & South Island moving team offers smooth, safe, and fast service. Book now for a stress-free relocation!",
   openGraph: {
-    title: "Contact Us | Pie Solutions",
+    title: "Home | Rm Moving Express",
     description:
-      "Get in touch with Pie Solutions' team for business modernization services, inquiries, and partnership opportunities.",
-    url: "https://www.piesolutions.ai/contact",
-    siteName: "Pie Solutions",
+      "Planning a move across islands? Our North & South Island moving team offers smooth, safe, and fast service. Book now for a stress-free relocation!",
+    url: "http://rmmovingexpress.com",
+    siteName: "Rm Moving Express",
     images: [
       {
         url: "/cover.png",
@@ -31,12 +31,12 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Us | Pie Solutions",
+    title: "Home | Rm Moving Express",
     description:
-      "Get in touch with Pie Solutions' team for business modernization services, inquiries, and partnership opportunities.",
+      "Planning a move across islands? Our North & South Island moving team offers smooth, safe, and fast service. Book now for a stress-free relocation!",
     images: ["/cover.png"],
   },
-  metadataBase: new URL("https://www.piesolutions.ai"),
+  metadataBase: new URL("http://rmmovingexpress.com"),
 };
 
 export default function Home() {

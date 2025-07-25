@@ -4,6 +4,9 @@
 .about {
   margin-top: 80px;
   margin-bottom: 80px;
+  @include size("md") {
+    margin-top: 0;
+  }
 }
 .aboutTop {
   position: relative;
@@ -26,6 +29,10 @@
 }
 .team {
   margin-top: 80px;
+
+  @include size("md") {
+    margin-top: 24px;
+  }
 
   .teamImg {
     height: 260px;

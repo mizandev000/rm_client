@@ -27,13 +27,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include size("md") {
+      height: 270px;
+    }
 
     h1 {
       font-size: $font-size-h1;
       font-weight: 400;
+      @include size("md") {
+        font-size: $font-size-h3;
+      }
     }
     p {
       width: 40%;
+      @include size("md") {
+        width: 100%;
+      }
     }
     a {
       background-color: #f9b729;

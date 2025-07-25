@@ -12,7 +12,7 @@ const Header = () => {
     <div className={styles.header}>
       <div className="container">
         <div className="row">
-          <div className="col-2 col-sm-6 col-md-6 col-lg-2">
+          <div className="col-6 col-sm-6 col-md-6 col-lg-2">
             <div className={styles.logo}>
               <Image
                 className="logo"
@@ -23,7 +23,8 @@ const Header = () => {
               />
             </div>
           </div>
-          <div className="col-sm-12 col-md-7 col-lg-10 d-none d-xl-block">
+          {/* <div className="col-sm-12 col-md-7 col-lg-10 d-none d-xl-block"> */}
+          <div className="col-6 col-sm-6 col-md-6 col-lg-10">
             <div className={styles.navMenuWrap}>
               <Nav />
               <MobileMenu />

@@ -6,54 +6,63 @@ import HomeServiceItem from "./HomeServiceItem";
 
 const homeServiceData: HomeServiceDataProps[] = [
   {
+    url: "local-moving",
     iconKey: "moving",
     title: "Local Moving",
     details:
       "Quick and efficient local moving solutions for homes and small offices, stress-free and affordable.",
   },
   {
+    url: "office-furniture-moving",
     iconKey: "island",
     title: "Office Furniture Moving Services",
     details:
       "Reliable, organized office relocations with minimal downtime and safe handling of all furniture and equipment.",
   },
   {
+    url: "long-distance-moving",
     iconKey: "relocation",
     title: "Long Distance Moving Services",
     details:
       " Nationwide moving support with secure packing, timely delivery, and competitive long-distance",
   },
   {
+    url: "house-relocation",
     iconKey: "moving",
     title: "House Relocation Services",
     details:
       "Complete home relocation from packing to setup — fast, careful, and fully insured service.",
   },
   {
+    url: "piano-shifting",
     iconKey: "island",
     title: "PIANO/SPA Moving",
     details:
       "Specialized piano transport using protective gear and expert handling for safe, damage-free delivery. Spa content need to be added",
   },
   {
+    url: "nort-south-island-moving",
     iconKey: "relocation",
     title: "North & South Island Moving",
     details:
       "Seamless inter-island moving with full logistics support from North Island to South Island and back.",
   },
   {
+    url: "bike-car-boat-transport",
     iconKey: "relocation",
     title: "Bike/Car/Boat Transport",
     details:
       "Trusted vehicle and boat transportation with professional handling and nationwide delivery options.",
   },
   {
+    url: "kitchen-cabinet-delivery",
     iconKey: "relocation",
     title: "Kitchen Cabinet Delivery",
     details:
       "Delivering your dream kitchen? Trust Moving Express for reliable and damage-free kitchen cabinet delivery to your doorstep.",
   },
   {
+    url: "senior-movers",
     iconKey: "relocation",
     title: "Senior movers",
     details:
@@ -86,6 +95,7 @@ export default function HomeService() {
                   icon={<IconComponent Color="#4a4a4a" />}
                   title={item.title}
                   details={item.details}
+                  url={item.url}
                 />
               </div>
             );
