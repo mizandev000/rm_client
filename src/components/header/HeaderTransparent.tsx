@@ -8,7 +8,7 @@ const HeaderTransparent = async () => {
     <div className={`${styles.header} ${styles.headerTransparent}`}>
       <div className="container">
         <div className="row">
-          <div className="col-2 col-sm-6 col-md-6 col-lg-3">
+          <div className="col-6 col-sm-6 col-md-6 col-lg-2">
             <div className={styles.logo}>
               {/* <Image
                 className="logo"
@@ -26,7 +26,7 @@ const HeaderTransparent = async () => {
               />
             </div>
           </div>
-          <div className="col-sm-12 col-md-7 col-lg-9 d-none d-xl-block">
+          <div className="col-6 col-sm-6 col-md-6 col-lg-10">
             <div className={styles.navMenuWrap}>
               <Nav />
               <MobileMenu />

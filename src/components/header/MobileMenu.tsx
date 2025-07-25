@@ -59,7 +59,7 @@ const MobileMenu = () => {
       >
         <div className={styles.mobileHeader}>
           <div className={styles.logo}>
-            <Image src="/logo.png" alt="Logo" width={40} height={38} />
+            <Image src="/logo.png" alt="Logo" width={80} height={38} />
           </div>
           <button
             onClick={() => setIsSidebarOpen(false)}
