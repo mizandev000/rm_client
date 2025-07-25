@@ -193,7 +193,7 @@
 }
 
 .mobileMenu {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: -100%;
   width: 80%;
@@ -208,8 +208,8 @@
 }
 
 .mobMenuIcon {
-  position: fixed;
-  top: 20px;
+  position: absolute;
+  top: 28px;
   right: 20px;
   z-index: 10000;
 }
