@@ -115,7 +115,7 @@ export default function OfficeFurnitureMoving() {
     <IntersectionAnimationWrapper>
       <Header />
       <PageSection
-        page_title="ffice Furniture Moving Services"
+        page_title="Office Furniture Moving Services"
         page_sub_title="Moving your office? Let our experts manage the process with minimal disruption. Our office furniture moving services are designed to be efficient, secure, and reliable."
       />
       <OfficeFurnitureMovingContent />

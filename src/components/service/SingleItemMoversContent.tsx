@@ -34,7 +34,7 @@ const data = [
     costs_title: "Handle your item with care",
     costs_subtitle:
       "We use the right gear and handle your item with care—every time. It’s fast, simple, and cheaper than hiring a big truck for a small job.",
-    image: "/service/service9.png",
+    image: "/service/service9.1.png",
     position: true,
   },
 ];

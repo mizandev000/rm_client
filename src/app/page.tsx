@@ -1,3 +1,4 @@
+import GoogleMap from "@/components/GoogleMap";
 import HeaderTransparent from "@/components/header/HeaderTransparent";
 import Banner from "@/components/home/banner/Banner";
 import HomeAbout from "@/components/home/HomeAbout";
@@ -59,14 +60,17 @@ export default function Home() {
   // }, []);
 
   return (
-    <main className={`${styles.main} containertest`}>
+    <main className={`${styles.main}`}>
       <IntersectionAnimationWrapper>
         <HeaderTransparent />
         <Banner />
-        <HomeAbout />
-        <HomeService />
-        <TestimonialSlider />
-        <HomeQuote />
+        <div className={styles.home}>
+          <HomeAbout />
+          <HomeService />
+          <TestimonialSlider />
+          <HomeQuote />
+          <GoogleMap />
+        </div>
         {/* <HomeStep /> */}
       </IntersectionAnimationWrapper>
     </main>

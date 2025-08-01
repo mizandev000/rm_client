@@ -10,7 +10,7 @@ const data = [
     costs_title: "Worried About Moving Costs?",
     costs_subtitle:
       "We’ve got your back! RM Moving Express is a WINZ Quote Registered Supplier, which means you might qualify for financial help with your move. Just reach out—we’ll guide you through the easy process.",
-    image: "/service/service16.png",
+    image: "/service/service32.png",
     position: true,
   },
   {
@@ -22,7 +22,7 @@ const data = [
     costs_title: "Flexible moving options ",
     costs_subtitle:
       "We offer full-service or flexible moving options tailored to your schedule and budget. Whether you’re moving down the street or across the country, we make house shifting simple.",
-    image: "/service/service17.png",
+    image: "/service/service31.png",
     position: false,
   },
   {
@@ -34,7 +34,7 @@ const data = [
     costs_title: "Moving with high care",
     costs_subtitle:
       "We treat your belongings with care and respect while keeping to your timeline and budget. Whether you’re upsizing, downsizing, or just shifting neighborhoods, we make it all feel effortless",
-    image: "/service/service18.png",
+    image: "/service/service33.png",
     position: true,
   },
 ];

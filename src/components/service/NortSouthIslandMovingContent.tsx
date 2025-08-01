@@ -10,7 +10,7 @@ const data = [
     costs_title: "Worried About Moving Costs?",
     costs_subtitle:
       "We’ve got your back! RM Moving Express is a WINZ Quote Registered Supplier, which means you might qualify for financial help with your move. Just reach out—we’ll guide you through the easy process.",
-    image: "/service/service1.jpg",
+    image: "/service/service34.png",
     position: true,
   },
   {
@@ -22,7 +22,7 @@ const data = [
     costs_title: "Professional movers across islands",
     costs_subtitle:
       " From packing to final setup, we manage your move end-to-end. Get peace of mind with professional movers who know how to move across islands efficiently.",
-    image: "/service/service1.jpg",
+    image: "/service/service35.png",
     position: false,
   },
   {
@@ -34,7 +34,7 @@ const data = [
     costs_title: "Affordable, secure and on-time",
     costs_subtitle:
       "Our team handles everything from home contents to office equipment. Affordable, secure, and on time—inter-island moving doesn’t have to be stressful when you’ve got the right partner on your side.",
-    image: "/service/service1.jpg",
+    image: "/service/service36.png",
     position: true,
   },
 ];

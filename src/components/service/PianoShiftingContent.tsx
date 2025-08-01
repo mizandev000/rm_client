@@ -22,7 +22,7 @@ const data = [
     costs_title: "Long Distance Piano Movers",
     costs_subtitle:
       "We treat your piano like the fine instrument it is—because moving music requires more than muscle. Trust our team for careful, affordable, and professional piano shifting.",
-    image: "/service/service20.png",
+    image: "/service/service21.png",
     position: false,
   },
   {
@@ -34,7 +34,7 @@ const data = [
     costs_title: "Moving without a scratch",
     costs_subtitle:
       " Our team uses proper lifting equipment, padding, and transport gear to ensure your instrument arrives without a scratch. Whether it’s a family heirloom or a performance piece, we move it safely, affordably, and on your schedule.",
-    image: "/service/service21.png",
+    image: "/service/service20.png",
     position: true,
   },
 ];

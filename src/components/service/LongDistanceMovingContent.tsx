@@ -10,7 +10,7 @@ const data = [
     costs_title: "Worried About Moving Costs?",
     costs_subtitle:
       "We’ve got your back! RM Moving Express is a WINZ Quote Registered Supplier, which means you might qualify for financial help with your move. Just reach out—we’ll guide you through the easy process while offering movers services across NZ at low -cost.",
-    image: "/service/service13.png",
+    image: "/service/service15.png",
     position: true,
   },
   {
@@ -22,7 +22,7 @@ const data = [
     costs_title: "Stress free long distance moving",
     costs_subtitle:
       "From start to finish, we manage every part of the move so you can relax. Our competitive pricing, timely updates, and reliable service make long distance moving easy and stress-free.",
-    image: "/service/service14.png",
+    image: "/service/service15.1.png",
     position: false,
   },
   {
@@ -34,7 +34,7 @@ const data = [
     costs_title: "No hidden costs",
     costs_subtitle:
       "Our pricing is transparent and competitive, with no hidden costs. Whether you’re moving from Auckland to Christchurch or anywhere in between, we’ve got the skills and trucks to get it done right.",
-    image: "/service/service15.png",
+    image: "/service/service13.png",
     position: true,
   },
 ];
