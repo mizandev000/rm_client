@@ -1,5 +1,6 @@
 "use client";
 import { TestimonialPropsItem } from "@/@types/home";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -10,49 +11,55 @@ import TestimonialItem from "./TestimonialItem";
 const testimonialData: TestimonialPropsItem[] = [
   {
     message:
-      "We had a fantastic experience with this moving company. 10/10 Russel and his team fantastic. Deepu and Arun were incredibly supportive, well-organized, and efficient. They made sure everything was handled perfectly, and we didn’t have to worry about leaving anything behind. Their flexibility was great—we could easily communicate our needs, and they adapted smoothly. They worked quickly but carefully, ensuring everything was transported safely. Highly recommend their service to anyone looking for a stress-free move!",
+      "Excellent company! Quick and easy communication, on time and efficient! Thank you so much. Also, it was a very reasonable price! Thank you",
     location: "Long distance House moving, Linwood ",
-    name: "Yohan Basnayaka",
-    photo: "/about/1.jpg",
+    name: "Danielle Ellis",
+    photo: null,
   },
   {
     message:
-      "10/10 recommend Russell and his amazing team. We had 2 men move our entire house in 3 trips over the space of 7 hours. I was blown away with their loading and unloading techniques I had to stand and watch them a few times because they made the impossible possible.Our men worked flawlessly together and communicated clearly. So professional and respectful with all our requests and personal items. If we move again in the future there is no doubt I would use this company again, and I will be recommending to all of my friends and family.",
+      "Excellent company! Quick and easy communication, on time and efficient! Thank you so much. Also, it was a very reasonable price! Thank you so much.",
     location: "Address needed",
-    name: "Harriet van Rooyen",
-    photo: "/about/2.jpg",
+    name: "Amanda",
+    photo: "/about/3.jpg",
   },
   {
     message:
-      "Thank you so much for making my move that bit less stressful the guys were such a big help would definitely recommend",
+      "Absolute life savers! 10/10! Rapid Movers were able to help us move at late notice which we were super grateful for! A very professional and efficient team. Made the process so easy and smooth. Thank you so much!",
     name: "Melissa Mc",
     location: "Address needed",
-    photo: "/about/3.jpg",
+    photo: null,
   },
   {
     message:
-      "Very satisfied with the moving process. Najib was competent with his job. Had a good chat with him along the way too. Highly recommended.",
+      "A huge thanks to JJ for making the move so much less stressful! The team handled everything promptly and professionally.",
     location: "Address needed",
     name: "Christophilarry Alex",
-    photo: "/about/3.jpg",
+    photo: null,
+  },
+  {
+    message: "Very quick and efficient, would recommend",
+    location: "Address needed",
+    name: "Maryann Cain",
+    photo: null,
   },
   {
     message:
-      "highly recommend this guy for transport things, nicely care and fair rates.thanks",
+      "Great service, skilled workers, efficient, very polite and pleasant. Definitely recommend.",
     location: "Address needed",
     name: "Maryann Cain",
-    photo: "/about/3.jpg",
+    photo: null,
   },
 ];
 
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
-    items: 1,
+    items: 3,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 1,
+    items: 3,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -74,48 +81,75 @@ export default function TestimonialSlider() {
     <div className={styles.testimonial}>
       <div className="container">
         <div className="row">
-          <Title title="Testimonials" subtitle="See what our clients say" />
+          <Title title="Happy Customers" subtitle="See what our clients say" />
+        </div>
+        <div className="row">
+          <div className="col-xs-12 col-sm-12 col-md-4 col-xl-4 col-lg-4">
+            <div className={styles.reviewGoogle}>
+              <h3>EXCELLENT</h3>
+              <div className={styles.googleStar}>
+                <Image width={30} height={30} src={"./star.svg"} alt={"star"} />
+                <Image width={30} height={30} src={"./star.svg"} alt={"star"} />
+                <Image width={30} height={30} src={"./star.svg"} alt={"star"} />
+                <Image width={30} height={30} src={"./star.svg"} alt={"star"} />
+                <Image width={30} height={30} src={"./star.svg"} alt={"star"} />
+              </div>
+              <h5>
+                Based on <b>128 reviews</b>
+              </h5>
+              <div className={styles.googleLogo}>
+                <Image
+                  width={110}
+                  height={35}
+                  src={"./googleLogo.svg"}
+                  alt={"star"}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-xs-12 col-sm-12 col-md-8 col-xl-8 col-lg-8">
+            {initialRenderComplete ? (
+              <>
+                {testimonialData ? (
+                  <>
+                    <Carousel
+                      // autoPlay
+                      infinite={true}
+                      responsive={responsive}
+                      additionalTransfrom={0}
+                      showDots={true}
+                      className={styles.serviceSlider}
+                      dotListClass={`${styles.testimonialDotList} testimonial-dot-list`}
+                      arrows={false}
+                      autoPlaySpeed={5000}
+                      centerMode={false}
+                      containerClass="container-with-dots"
+                      draggable
+                      focusOnSelect={false}
+                      itemClass=""
+                      keyBoardControl
+                      minimumTouchDrag={80}
+                      pauseOnHover
+                      renderArrowsWhenDisabled={false}
+                      renderButtonGroupOutside={false}
+                      renderDotsOutside={false}
+                    >
+                      {testimonialData.map((item: TestimonialPropsItem) => (
+                        <TestimonialItem
+                          message={item.message}
+                          location={item.location}
+                          name={item.name}
+                          photo={item.photo}
+                        />
+                      ))}
+                    </Carousel>
+                  </>
+                ) : null}
+              </>
+            ) : null}
+          </div>
         </div>
       </div>
-      {initialRenderComplete ? (
-        <>
-          {testimonialData ? (
-            <>
-              <Carousel
-                // autoPlay
-                infinite={true}
-                responsive={responsive}
-                additionalTransfrom={0}
-                showDots={true}
-                className={styles.serviceSlider}
-                dotListClass={`${styles.testimonialDotList} testimonial-dot-list`}
-                arrows={false}
-                autoPlaySpeed={5000}
-                centerMode={false}
-                containerClass="container-with-dots"
-                draggable
-                focusOnSelect={false}
-                itemClass=""
-                keyBoardControl
-                minimumTouchDrag={80}
-                pauseOnHover
-                renderArrowsWhenDisabled={false}
-                renderButtonGroupOutside={false}
-                renderDotsOutside={false}
-              >
-                {testimonialData.map((item: TestimonialPropsItem) => (
-                  <TestimonialItem
-                    message={item.message}
-                    location={item.location}
-                    name={item.name}
-                    photo={item.photo}
-                  />
-                ))}
-              </Carousel>
-            </>
-          ) : null}
-        </>
-      ) : null}
     </div>
   );
 }

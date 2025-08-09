@@ -105,7 +105,7 @@ export default function KitchenCabinetDelivery() {
     <IntersectionAnimationWrapper>
       <Header />
       <PageSection
-        page_title="Kitchen Cabinet Delivery"
+        page_title="Commercial Delivery"
         page_sub_title="Delivering your dream kitchen? Trust Moving Express for reliable and damage-free kitchen cabinet delivery to your doorstep."
       />
       <KitchenCabinetDeliveryContent />

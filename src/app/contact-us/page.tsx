@@ -31,8 +31,8 @@ export default function mepService() {
                 />
                 <Address
                   name="Email Us"
-                  subtitleOne="support@rm.com"
-                  subtitleTwo="hello@rm.com"
+                  subtitleOne="info@rmmovingexpress.com"
+                  subtitleTwo=""
                 />
                 <Address
                   name="Contact Us"

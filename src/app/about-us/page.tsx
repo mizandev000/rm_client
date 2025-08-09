@@ -15,7 +15,7 @@ export default function mepService() {
             <div className="col-xs-12 col-sm-12 col-md-6 col-xl-6 col-lg-6">
               <div className={`reveal ${styles.aboutTop}`}>
                 <h5 className="fadeup-sm">About Us</h5>
-                <h2 className="fadeup-sm">Introducing Easy Peasy Removals</h2>
+                <h2 className="fadeup-sm">Introducing RM Moving Express</h2>
                 <p className="fadeup-sm">
                   At RM Moving Express, we’re more than just movers — we’re your
                   trusted relocation partners across New Zealand. With years of
@@ -53,21 +53,21 @@ export default function mepService() {
           </div>
           <Team
             img="/about/4.jpg"
-            name="Rasel"
+            name="Russel Rahman"
             designation="Operations Manager"
             details=" Rasel is the engine behind RM Moving Express. He oversees daily operations, coordinates logistics, and ensures every job runs smoothly. With a sharp eye for detail and a strong focus on customer care, Rasel is your go-to guy for a seamless moving experience."
           />
           <Team
             img="/about/1.jpg"
-            name="Sukhbir"
+            name="DEEPU SINGH"
             designation=" Professional Loader"
-            details="Sukhbir brings strength, speed, and a great attitude to every move. Whether it’s heavy furniture or fragile items, he handles everything with care and precision. His work ethic and reliability have earned him praise from countless happy clients."
+            details="Deepu Sing  brings strength, speed, and a great attitude to every move. Whether it’s heavy furniture or fragile items, he handles everything with care and precision. His work ethic and reliability have earned him praise from countless happy clients."
           />
           <Team
             img="/about/2.jpg"
-            name="Sushant"
+            name="ARUN SINGH "
             designation="Professional Loader"
-            details="Sushant is all about safety and efficiency. He’s always ready to lend a hand, making sure your belongings are securely packed and transported with minimal hassle. His friendly nature and professionalism make him a key part of every successful move."
+            details="Arun Sing is all about safety and efficiency. He’s always ready to lend a hand, making sure your belongings are securely packed and transported with minimal hassle. His friendly nature and professionalism make him a key part of every successful move."
           />
         </div>
       </div>

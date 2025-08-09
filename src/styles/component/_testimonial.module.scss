@@ -22,25 +22,98 @@
     height: 100%;
   }
 }
+.testimonialStar {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  img {
+    margin-right: 4px;
+  }
+
+  .verifiedReview {
+    display: inline-block;
+    background: url("../../../public/ti-verified.svg");
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+    margin: 0 !important;
+    margin-left: 7px !important;
+    position: relative;
+    z-index: 2;
+    .reviewNot {
+      width: 114px;
+      height: 92px;
+      padding: 4px;
+      padding-bottom: 6px;
+      font-family: "Trustindex Open Sans";
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.4em;
+      color: #fff !important;
+      background-color: #555555 !important;
+      border-radius: 4px;
+      position: absolute;
+      left: -18px;
+      top: 0px;
+      z-index: 1;
+      opacity: 0;
+      margin-left: 35px;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, margin 0.3s ease-in-out;
+    }
+    &:hover {
+      .reviewNot {
+        // display: block;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+.messageWrap {
+  height: 160px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 6px; /* scrollbar width */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f4f4f4; /* track color */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888; /* scrollbar thumb color */
+    border-radius: 5px; /* rounded edges */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555; /* hover color */
+  }
+}
 .testimonialSliderWrap {
-  background-color: white;
-  padding: 64px 30px 30px 64px;
   position: relative;
   text-align: center;
-  margin-top: 64px;
-  margin-bottom: 24px;
+  background-color: #f4f4f4;
+  padding: 24px;
+  margin: 9px;
 
-  @include size("md") {
-    padding: 64px 0px 0px 0px;
+  .testimonialHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .testimonialHeadLeft {
+    display: flex;
   }
 
   h5 {
     color: $tx-color-content;
-    width: 60%;
     margin: auto;
     margin-top: 18px;
     font-size: 18px;
     font-weight: 400;
+    text-align: left;
     @include size("md") {
       width: 100%;
       padding: 6px;
@@ -51,24 +124,35 @@
     color: $tx-color-content;
     margin-top: 20px;
   }
-  h3 {
-    color: $primary;
-    font-size: $font-size-h4;
-    margin-top: 16px;
+  .testimonialName {
+    text-align: left;
+    margin-left: 6px;
+    h3 {
+      font-weight: bold;
+      font-size: 18px;
+      overflow: hidden;
+      padding-right: 25px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: #000000;
+      margin-bottom: 2px;
+    }
+    h6 {
+      color: #000000;
+      opacity: 0.5;
+      font-size: 14px;
+    }
   }
+
   .testimonialImg {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
     background: white;
-    border: 5px solid #fff;
     border-radius: 50%;
-    box-shadow: 0px 10px 15px rgb(9 2 111 / 30%);
 
     img {
+      width: 40px;
+      height: 40px;
       overflow: hidden;
       border-radius: 50%;
     }
@@ -146,4 +230,29 @@
       bottom: 0px;
     }
   }
+}
+.reviewGoogle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+
+  h3 {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 6px;
+  }
+  h5 {
+    font-size: 15px;
+    color: #000000;
+  }
+  .googleStar {
+    display: flex;
+  }
+  .googleLogo {
+    margin-top: 10px;
+  }
+}
+.serviceSlider {
+  height: 360px;
 }

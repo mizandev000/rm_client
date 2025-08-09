@@ -22,5 +22,5 @@ export interface TestimonialPropsItem {
   message: string;
   location: string;
   name: string;
-  photo: string;
+  photo: any;
 }

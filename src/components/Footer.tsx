@@ -19,9 +19,10 @@ export default function Footer() {
                 />
               </div>
               <p>
-                Experts on Melbourne, Sydney and interstate removals, we at Easy
-                Peasy Removals are all about providing a hassle-free moving
-                service, be it a house or office move.
+                Experts on Christchurch Canterbury, southisland and inter-city
+                movers, we at RM Moving express are all about providing a
+                hassle-free moving service, be it a house, office or Commercial
+                move.
               </p>
             </div>
           </div>
@@ -43,7 +44,7 @@ export default function Footer() {
               <h3>Contact</h3>
               <ul>
                 <li>Phone: +64284215199</li>
-                <li>Email: Info@rapidmovers.co.nz</li>
+                <li>Email: info@rmmovingexpress.com</li>
                 <li>36 mathesons road philipstown, Christchurch 8011 </li>
               </ul>
             </div>
