@@ -5,7 +5,6 @@ import { Yantramanav } from "next/font/google";
 
 import Footer from "@/components/Footer";
 import QueryProvider from "@/providers/QueryProvider";
-import Head from "next/head";
 import "../styles/bootstrap-grid.css";
 import "../styles/globals.scss";
 import "./globals.css";
@@ -24,6 +23,9 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },
+  verification: {
+    google: "-mKTit3VH8Zjw__WMcLUpc09NgHCQsS8A5YWaiKRNNA",
+  },
 };
 
 export default function RootLayout({
@@ -33,12 +35,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      {/* <Head>
         <meta
           name="google-site-verification"
           content="-mKTit3VH8Zjw__WMcLUpc09NgHCQsS8A5YWaiKRNNA"
         />
-      </Head>
+      </Head> */}
       <body className={yantramanav.className}>
         <QueryProvider>
           <LenisWrapper>
