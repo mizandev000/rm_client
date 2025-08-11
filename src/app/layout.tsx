@@ -10,11 +10,6 @@ import "../styles/bootstrap-grid.css";
 import "../styles/globals.scss";
 import "./globals.css";
 
-// const poppins = Poppins({
-//   subsets: ["latin"],
-//   weight: ["400", "700"],
-// });
-
 const yantramanav = Yantramanav({
   subsets: ["latin"],
   weight: ["100", "300", "400", "500", "700", "900"],
