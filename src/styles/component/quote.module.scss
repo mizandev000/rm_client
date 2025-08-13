@@ -3,6 +3,9 @@
 .quote {
   margin-top: 24px;
   margin-bottom: 84px;
+  form {
+    background-color: white;
+  }
 }
 .stepperBtnWrap {
   display: flex;
@@ -38,6 +41,7 @@
     margin-bottom: 16px;
     display: inline-block;
     font-size: $font-size-h5;
+    color: $tx-color;
     p {
       font-size: $font-size-p;
       color: $tx-color-content;
@@ -53,6 +57,7 @@
     width: 100%;
     border-radius: 4px;
     @extend .transitionAll;
+    color: $tx-color;
     &::placeholder {
       color: hsl(0, 0%, 50%);
     }

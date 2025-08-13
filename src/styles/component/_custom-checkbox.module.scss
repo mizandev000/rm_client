@@ -1,10 +1,14 @@
+@import "../abstracts/variable";
 .checkboxWrapper {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
-  color: var(--tx-color);
+  color: $tx-color;
   cursor: pointer;
+  span {
+    color: $tx-color;
+  }
 }
 
 .checkboxWrapper input[type="checkbox"] {

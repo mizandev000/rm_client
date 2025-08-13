@@ -1,4 +1,5 @@
 @import "../abstracts/mixin";
+@import "../abstracts/variable";
 .expansionWrap {
   margin-top: 80px;
   margin-bottom: 80px;
@@ -37,8 +38,10 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    color: $tx-color;
   }
   p {
     padding: 1rem;
+    color: $tx-color;
   }
 }
