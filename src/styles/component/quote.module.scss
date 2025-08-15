@@ -58,6 +58,7 @@
     border-radius: 4px;
     @extend .transitionAll;
     color: $tx-color;
+    background: white;
     &::placeholder {
       color: hsl(0, 0%, 50%);
     }
@@ -76,6 +77,11 @@
 .selectItem {
   margin-bottom: 24px;
   margin-top: 24px;
+  color: $tx-color;
+
+  .selectDropdown {
+    color: $tx-color;
+  }
 
   label {
     width: 100%;

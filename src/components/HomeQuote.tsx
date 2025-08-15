@@ -131,6 +131,7 @@ export default function HomeQuote() {
                 <div className={styles.selectItem}>
                   <label>Type of move</label>
                   <Controller
+                    className={styles.selectDropdown}
                     control={control}
                     name="typeOfMove"
                     render={({ field }) => (
