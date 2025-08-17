@@ -2,6 +2,7 @@
 import { ContactProps } from "@/@types/contactType";
 import useContactMutation from "@/hooks/mutations/useContactMutation";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useEffect, useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import * as yup from "yup";
 import styles from "../../styles/component/_contact_us.module.scss";
@@ -18,6 +19,8 @@ const schema = yup.object().shape({
 });
 
 const ContactForm = () => {
+  const [showSuccess, setShowSuccess] = useState(true);
+
   const {
     mutate: contactUser,
     data: contactPostData,
@@ -35,19 +38,30 @@ const ContactForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = methods;
 
-  // const onSubmit = (data) => {
-  //   console.log("Form Data:", data);
-  // };
-
   const onSubmit: SubmitHandler<ContactProps> = async (data: ContactProps) => {
-    console.log(data);
-
-    contactUser({
-      contactInfo: data,
-    });
+    contactUser(
+      { contactInfo: data },
+      {
+        onSuccess: () => {
+          reset();
+        },
+      }
+    );
   };
+
+  // ✅ Hide success message after 3 seconds
+  useEffect(() => {
+    if (contactPostIsSuccess) {
+      const timer = setTimeout(() => {
+        setShowSuccess(false);
+      }, 3000);
+
+      return () => clearTimeout(timer); // cleanup
+    }
+  }, [contactPostIsSuccess]);
 
   return (
     <FormProvider {...methods}>
@@ -97,9 +111,32 @@ const ContactForm = () => {
             </div>
           </div>
 
-          <button type="submit" className={styles.submitBtn}>
+          {/* <button type="submit" className={styles.submitBtn}>
             Submit
+          </button> */}
+          <button
+            type="submit"
+            className={styles.submitBtn}
+            disabled={contactLoading}
+          >
+            {contactLoading ? "Sending..." : "Submit"}
           </button>
+
+          {showSuccess && contactPostIsSuccess && (
+            <div className="col-12">
+              <p className={styles.successMessage}>
+                Thank you! Your message has been sent.
+              </p>
+            </div>
+          )}
+
+          {isError && (
+            <div className="col-12">
+              <p className={styles.errorMessage}>
+                ❌ Oops! Something went wrong. Please try again.
+              </p>
+            </div>
+          )}
         </div>
       </form>
     </FormProvider>

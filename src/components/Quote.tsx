@@ -1,6 +1,6 @@
 "use client";
 import { ContactProps } from "@/@types/contactType";
-import useContactMutation from "@/hooks/mutations/useContactMutation";
+import useQuoteMutation from "@/hooks/mutations/useQuoteMutation";
 import { yupResolver } from "@hookform/resolvers/yup";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -85,18 +85,25 @@ const schema = yup.object().shape({
 
 export default function Quote() {
   const {
-    mutate: contactUser,
-    isLoading: contactLoading,
+    mutate: quoteSend,
+    isLoading: quoteLoading,
     isSuccess: contactPostIsSuccess,
     isError,
-  } = useContactMutation();
+  } = useQuoteMutation();
 
-  const methods = useForm<ContactProps>({
+  const methods = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
       interested: [],
     },
   });
+
+  // const methods = useForm<ContactProps>({
+  //   resolver: yupResolver(schema),
+  //   defaultValues: {
+  //     interested: [],
+  //   },
+  // });
 
   const {
     register,
@@ -104,15 +111,22 @@ export default function Quote() {
     setValue,
     control,
     formState: { errors },
+    reset,
   } = methods;
 
   const interested = useWatch({ control, name: "interested" });
 
   const showNoDateInfo = interested?.includes("exact_date");
 
-  const onSubmit: SubmitHandler<ContactProps> = (data) => {
-    console.log("Submitting data:", data);
-    contactUser({ contactInfo: data });
+  const onSubmit: SubmitHandler<ContactProps> = async (data: ContactProps) => {
+    quoteSend(
+      { quoteInfo: data },
+      {
+        onSuccess: () => {
+          reset();
+        },
+      }
+    );
   };
 
   return (
@@ -411,9 +425,9 @@ export default function Quote() {
                 <button
                   type="submit"
                   className={styles.submitBtn}
-                  disabled={contactLoading}
+                  disabled={quoteLoading}
                 >
-                  {contactLoading ? "Sending..." : "Submit"}
+                  {quoteLoading ? "Sending..." : "Submit"}
                 </button>
               </div>
             </div>
