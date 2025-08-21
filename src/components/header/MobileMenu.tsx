@@ -76,6 +76,11 @@ const MobileMenu = () => {
                 Home
               </Link>
             </li>
+            <li className={styles.navItem}>
+              <Link href="/about-us" onClick={handleLinkClick}>
+                About
+              </Link>
+            </li>
 
             {/* Services Dropdown */}
             <li className={styles.navItem}>

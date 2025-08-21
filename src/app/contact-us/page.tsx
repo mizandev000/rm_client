@@ -15,7 +15,7 @@ export default function mepService() {
           <div className="row">
             <Title
               title="Get in Touch."
-              subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+              subtitle="We’d love to hear from you—reach out with questions, feedback, or collaboration opportunities anytime."
             />
           </div>
           <div className={styles.contact}>
