@@ -174,10 +174,10 @@ export default function Nav() {
           </Link>
         </li>
         <li className={`${styles.navItem} ${styles.callUs}`}>
-          <a href="tel:+64284215199" className="text-blue-600 underline">
-            <PhoneIcon Color="orange" />
+          <Link href="tel:+64284215199" className={styles.appointmentBtn}>
+            <PhoneIcon Color="white" />
             Call Us: +64284215199
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

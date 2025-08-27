@@ -1,11 +1,19 @@
+"use client";
 import Team from "@/components/about/Team";
 import Header from "@/components/header";
 import ImageResponsive from "@/components/image/ImageResponsive";
 import IntersectionAnimationWrapper from "@/components/IntersectionAnimationWrapper";
 import Title from "@/components/Title";
+import useFetchCompanyInformation from "@/hooks/queries/useFetchCompanyInformation";
 import styles from "../../styles/component/_about.module.scss";
 
 export default function mepService() {
+  const { data, isLoading, isFetching } = useFetchCompanyInformation();
+
+  console.log("test data");
+  console.log(data);
+  console.log("test data");
+
   return (
     <IntersectionAnimationWrapper>
       <Header />
